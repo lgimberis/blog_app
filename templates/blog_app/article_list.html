@@ -8,6 +8,10 @@
         {{article.published}}<a href={% url 'blog-app-article' article.slug %}>{{ article.title }}</a><br>
         {{article.summary}}
     </li>
+{% empty %}
+    <li>
+        There are no articles yet.
+    </li>
 {% endfor %}
 </ul>
 {% endblock %}
