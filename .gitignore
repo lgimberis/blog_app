@@ -1,6 +1,7 @@
 ## CUSTOM ##
 .idea/
 .venv/
+.vscode/
 templates/blog_app/content/*
 ##################################
 # Default python .gitignore

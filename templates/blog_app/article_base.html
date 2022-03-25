@@ -1,0 +1,19 @@
+{# Base template for blog articles #}
+{% extends "blog_app/base.html" %}
+{% load humanize %}
+
+{% block body %}
+<article>
+    <h1>{{ article.title }}</h1>
+    {% block content %} {% endblock %}
+</article>
+
+<footer>
+    <small>
+        Published: {{ article.published_datetime }} ({{ article.published_datetime | naturaltime }})
+        {% if article.is_modified_since_published %}
+            <br>Edited: {{ article.modified_datetime }} ({{ article.modified_datetime | naturaltime }})
+        {% endif %}
+    </small>
+</footer>
+{% endblock %}
